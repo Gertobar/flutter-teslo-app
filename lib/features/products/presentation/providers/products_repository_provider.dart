@@ -5,7 +5,7 @@ import 'package:teslo_app/features/products/domain/domain.dart';
 
 final productsRepositoryProvider = Provider<ProductsRepository>((ref) {
 
-  final accessToken = ref.watch(authProvider).user!.token ?? '';
+  final accessToken = ref.watch(authProvider).user?.token ?? '';
   final productsRepository = ProductsRepositoryImpl(
     ProductsDatasourceImpl(accessToken: accessToken)
   );
